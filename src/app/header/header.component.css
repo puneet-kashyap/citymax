@@ -1,0 +1,36 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.container{
+  background-color: #881b0f;
+}
+
+.row {
+  padding: 25px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0px;
+  width: -webkit-fill-available;
+  z-index: 2;
+  background-color: #881b0f;
+}
+
+.second-row{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 25px 10px 25px;
+  color: wheat;
+  background-color: brown;
+}
+
+.first-row{
+  padding: 25px 25px 5px 25px;
+  color: white;
+}
+
+.right-section{
+  text-align: center;
+}
