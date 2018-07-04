@@ -1,0 +1,15 @@
+.footer {
+    background-color: #881b0f;
+}
+
+.links {
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+a {
+    padding: 10px;
+    color: white;
+}

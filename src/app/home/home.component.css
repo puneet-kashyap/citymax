@@ -1,0 +1,21 @@
+.links {
+    display: flex;
+}
+
+.row {
+    padding: 10px;
+}
+
+.padding {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+mat-icon {
+    padding-right: 35px;
+}
+
+mat-card {
+    background-color: wheat;
+}

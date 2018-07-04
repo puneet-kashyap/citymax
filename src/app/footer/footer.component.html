@@ -1,0 +1,9 @@
+<div class="container-fluid footer">
+  <div class="row">
+    <div class="col links"> |
+      <div *ngFor='let link of links'>
+          <a routerLink={{link.hyperlink}} routerLinkActive="active">{{link.name}}</a> |
+      </div>
+    </div>
+  </div>
+</div>
