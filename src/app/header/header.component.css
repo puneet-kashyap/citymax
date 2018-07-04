@@ -30,11 +30,16 @@ a {
   background-color: brown;
 }
 
-.first-row{
+.first-row {
   padding: 25px 25px 5px 25px;
   color: white;
+  max-height: 20vh; 
 }
 
 .right-section{
   text-align: center;
+}
+
+.rightLogo {
+  max-height: 100%;
 }
