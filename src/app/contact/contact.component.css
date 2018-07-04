@@ -1,0 +1,14 @@
+.google-maps{
+    height: 70vh;
+    margin: 20px 0px;
+}
+
+.title {
+    padding: 20px 10px;
+}
+
+.contact {
+    padding: 50px 10px;
+    text-align: center;
+    background: linear-gradient(to bottom, #881b0f, white, #881b0f);
+}
