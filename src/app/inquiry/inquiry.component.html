@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="row reservation">
+      <mat-card>
+        <div *ngIf="!submitted">
+          <h3>Inquiry</h3>
+  
+          <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  
+            <mat-form-field class="full-width">
+              <input ngModel name="name" minlength="3" matInput placeholder="Your Name" required>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <input class="form-control" ngModel name="email" type="email" matInput placeholder="Email" required email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <input ngModel type="tel" name="phone" minlength="10" matInput placeholder="Phone" required>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <input ngModel type="text" name="destination" matInput placeholder="Destination" [matAutocomplete]="auto" required>
+              <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Date to call">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width">
+              <textarea ngModel name="comments" matInput placeholder="Leave a comment"></textarea>
+            </mat-form-field>
+  
+            <button mat-raised-button type="submit" color="primary">
+              Submit
+            </button>
+  
+          </form>
+        </div>
+  
+        <div *ngIf="submitted" class="thanks">
+          <h3>Thank You.</h3>
+          <p>Your inquiry has been submitted with following details:</p>
+          <div class="details">
+            <h5><b>Name:</b> {{submittedForm.name}}</h5>
+            <h5><b>Email:</b> {{submittedForm.email}}</h5>
+            <h5><b>Phone:</b> {{submittedForm.phone}}</h5>
+            <h5><b>Size:</b> {{submittedForm.destination}}</h5>
+            <h5><b>Date:</b> {{submittedForm.date | date}}</h5>
+            <h5><b>Comments:</b> {{submittedForm.comments}}</h5>
+          </div>
+  
+        </div>
+  
+  
+      </mat-card>
+    </div>
+  
+  </div>
