@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const appRoutes: Routes = [
   {
@@ -37,6 +38,11 @@ const appRoutes: Routes = [
     component: InquiryComponent,
     data: { title: "CityMax Enterprise"}
   },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    data: { title: "CityMax Enterprise"}
+  },
 ]
 
 @NgModule({
@@ -46,7 +52,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HomeComponent,
     ContactComponent,
-    InquiryComponent
+    InquiryComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
