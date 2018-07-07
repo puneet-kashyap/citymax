@@ -26,22 +26,22 @@ const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { title: "CityMax Enterprise"}
+    data: { title: "CityMax Enterprises"}
   },
   {
     path: 'contact',
     component: ContactComponent,
-    data: { title: "CityMax Enterprise"}
+    data: { title: "CityMax Enterprises"}
   },
   {
     path: 'inquiry',
     component: InquiryComponent,
-    data: { title: "CityMax Enterprise"}
+    data: { title: "CityMax Enterprises"}
   },
   {
     path: 'courses',
     component: CoursesComponent,
-    data: { title: "CityMax Enterprise"}
+    data: { title: "CityMax Enterprises"}
   },
 ]
 
