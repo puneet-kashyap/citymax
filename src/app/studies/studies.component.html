@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Colleges &amp; Universities in {{ getCountry() | titlecase }}</h3>
+      <p>We are the leading Education agent since the year 1995 with a benchmark of recruiting a huge number of student to various canadian institutes . We represent the following Universities &amp; Colleges in Canada.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <li *ngFor='let course of courses'>
+        {{course}}
+      </li>
+    </div>
+  </div>
+</div>
