@@ -22,6 +22,9 @@ import { ContactComponent } from './contact/contact.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { CoursesComponent } from './courses/courses.component';
 import { StudiesComponent } from './studies/studies.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {
@@ -77,6 +80,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatIconModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     RouterModule.forRoot(
       appRoutes
 )
