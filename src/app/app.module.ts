@@ -21,6 +21,10 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { CoursesComponent } from './courses/courses.component';
+import { StudiesComponent } from './studies/studies.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   {
@@ -43,6 +47,21 @@ const appRoutes: Routes = [
     component: CoursesComponent,
     data: { title: "CityMax Enterprises"}
   },
+  {
+    path: 'study-in-canada',
+    component: StudiesComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'study-in-australia',
+    component: StudiesComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'study-in-newzealand',
+    component: StudiesComponent,
+    data: { title: "CityMax Enterprises"}
+  }
 ]
 
 @NgModule({
@@ -53,7 +72,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ContactComponent,
     InquiryComponent,
-    CoursesComponent
+    CoursesComponent,
+    StudiesComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +90,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatIconModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     RouterModule.forRoot(
       appRoutes
 )
