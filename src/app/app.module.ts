@@ -52,6 +52,16 @@ const appRoutes: Routes = [
     component: StudiesComponent,
     data: { title: "CityMax Enterprises"}
   },
+  {
+    path: 'study-in-australia',
+    component: StudiesComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'study-in-newzealand',
+    component: StudiesComponent,
+    data: { title: "CityMax Enterprises"}
+  }
 ]
 
 @NgModule({

@@ -22,11 +22,11 @@ export class HomeComponent implements OnInit {
 
   links = [
     { name: 'Study in Canada', hyperlink: '/study-in-canada' },
-    { name: 'Study in Australia', hyperlink: '/inquiry'},
-    { name: 'Study in New Zealand', hyperlink: '/courses'},
-    { name: 'Study in UK', hyperlink: '/contact'},
-    { name: 'Study in America', hyperlink: '/inquiry'},
-    { name: 'Other Destinations', hyperlink: '/inquiry'},
+    { name: 'Study in Australia', hyperlink: '/study-in-australia'},
+    { name: 'Study in New Zealand', hyperlink: '/study-in-newzealand'},
+    { name: 'Study in UK', hyperlink: ''},
+    { name: 'Study in America', hyperlink: ''},
+    { name: 'Other Destinations', hyperlink: ''},
   ]
 
 }
