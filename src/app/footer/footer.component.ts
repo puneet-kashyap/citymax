@@ -18,14 +18,15 @@ export class FooterComponent implements OnInit {
     { name: 'Courses', hyperlink: '/courses'},
     { name: 'Contact Us', hyperlink: '/contact'},
     { name: 'About Us', hyperlink: '/inquiry'},
-    { name: 'Vocational Courses', hyperlink: '/inquiry'},
+    { name: 'Vocational Courses', hyperlink: '/vocational'},
     { name: 'Internship In Overseas', hyperlink: '/inquiry'},
     { name: 'Junior And High School Programmes', hyperlink: '/inquiry'},
     { name: 'Language Programmes', hyperlink: '/inquiry'},
     { name: 'Summer Camps', hyperlink: '/inquiry'},
     { name: 'Membership', hyperlink: '/inquiry'},
     { name: 'Semester Abroad', hyperlink: '/inquiry'},
-    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/inquiry'}
+    { name: 'Spending A Year Abroad', hyperlink: '/spendingyear'},
+    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate'}
 
   ]
 
