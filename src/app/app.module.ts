@@ -73,6 +73,36 @@ const appRoutes: Routes = [
     component: CourseComponent,
     data: { title: "CityMax Enterprises"}
   },
+  {
+    path: 'spendingyear',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'internship',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'juniorandhigh',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'language',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'summercamp',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'semster',
+    component: CourseComponent,
+    data: { title: "CityMax Enterprises"}
+  },
 ]
 
 @NgModule({
@@ -103,7 +133,7 @@ const appRoutes: Routes = [
     MatIconModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule,
     RouterModule.forRoot(
       appRoutes
 )

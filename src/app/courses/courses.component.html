@@ -15,6 +15,10 @@
         <mat-card-content>
           <p>{{course.description}}</p>
         </mat-card-content>
+        <mat-card-actions>
+          <button routerLink='/{{course.id}}' routerLinkActive="active" mat-button>DETAILS</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
       </mat-card>
 
     </div>
