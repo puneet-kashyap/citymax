@@ -13,6 +13,7 @@ export class InquiryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
   options: string[] = ['America', 'Australia', 'Canada', 'United Kingdom', 'New Zealand', 'Other'];

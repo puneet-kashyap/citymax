@@ -10,6 +10,7 @@ export class CoursesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo(0, 0);
   }
 
   courses = [
@@ -48,6 +49,12 @@ export class CoursesComponent implements OnInit {
       name: 'Semester Abroad',
       img: `https://images.unsplash.com/photo-1519331582073-283f1a211a3e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e2523370d1085a679451aecbca3b136&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb`,
       description: 'Alike spending a year abroad, studying a semester abroad also holds a lot of value. Along with study, you can gain various privileges of learning new things, practically and intellectually. This would help in getting more credits along with your experience of learning new and latest technology in Fine Arts, Management, Sciences or IT and other fields. So grab all opportunities to make your future brighter ever. '
+    },
+    {
+      id: 'spendingyear',
+      name: 'Spending A Year Abroad',
+      img: `https://images.unsplash.com/photo-1479660095429-2cf4e1360472?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=999a4a6fe048fb1d97d64ae12b2c7ec2&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb`,
+      description: 'Spending a year abroad would enhance your course with positive and efficient credits. With this you are privileged in various respects like : marks scores, practical scores, experience of communication, meetings, conferences and loads more to learn from. Spending a year abroad will be a steep jump of career towards success. So choose your course for study or job, and we\'ll assist you to get your dream place.'
     },
     {
       id: 'undergraduate',
