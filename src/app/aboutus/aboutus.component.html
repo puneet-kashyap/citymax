@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col heading">
+      <h1>About Us</h1>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="col">
+      <p>{{header}}</p>
+      <div class="image">
+        <img [src]='img' alt="">
+      </div>
+      <p *ngFor='let desc of description'>
+        {{desc}}
+      </p>
+      <li *ngFor='let member of members'>
+        {{member}}
+      </li>
+    </div>
+  </div>
+</div>
