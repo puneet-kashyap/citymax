@@ -14,3 +14,11 @@ a {
     padding: 10px;
     color: white;
 }
+
+.copyright {
+    text-align: center;
+}
+
+#footer-email {
+    color: #881b0f;
+}

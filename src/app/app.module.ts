@@ -26,6 +26,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { CourseComponent } from './courses/course/course.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const appRoutes: Routes = [
   {
@@ -46,6 +47,11 @@ const appRoutes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
+    data: { title: "CityMax Enterprises"}
+  },
+  {
+    path: 'aboutus',
+    component: AboutusComponent,
     data: { title: "CityMax Enterprises"}
   },
   {
@@ -115,7 +121,8 @@ const appRoutes: Routes = [
     InquiryComponent,
     CoursesComponent,
     StudiesComponent,
-    CourseComponent
+    CourseComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
