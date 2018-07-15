@@ -27,6 +27,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { CourseComponent } from './courses/course/course.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
 const appRoutes: Routes = [
   {
@@ -122,7 +123,8 @@ const appRoutes: Routes = [
     CoursesComponent,
     StudiesComponent,
     CourseComponent,
-    AboutusComponent
+    AboutusComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
