@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
 
   address = [
     'Jalandhar Road,',
-    'Opposite Bawa lal wani school',
+    'Opposite Bawa-Lalvani Public school',
     'Kapurthala, Punjab India'
   ]
 
