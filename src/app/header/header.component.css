@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 
-.container{
+.header{
   background-color: #881b0f;
 }
 
@@ -33,7 +33,7 @@ a {
 .first-row {
   padding: 25px 25px 5px 25px;
   color: white;
-  max-height: 20vh; 
+  max-height: 30vh; 
 }
 
 .right-section{
