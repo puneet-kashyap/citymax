@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '../../../node_modules/@angular/forms';
+import { MatAutocompleteModule, MatCard, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule } from '../../../node_modules/@angular/material';
+import { BrowserAnimationsModule } from '../../../node_modules/@angular/platform-browser/animations';
 import { InquiryComponent } from './inquiry.component';
+
 
 describe('InquiryComponent', () => {
   let component: InquiryComponent;
@@ -8,9 +11,21 @@ describe('InquiryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InquiryComponent ]
+      declarations: [
+        InquiryComponent,
+        MatCard,
+      ],
+      imports: [
+        FormsModule,
+        MatAutocompleteModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatFormFieldModule,
+        MatInputModule,
+        BrowserAnimationsModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
