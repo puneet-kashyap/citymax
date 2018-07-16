@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FooterComponent } from './footer.component';
+import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
+import { RouterModule } from '../../../node_modules/@angular/router';
 
 describe('FooterComponent', () => {
   let component: FooterComponent;
@@ -8,7 +10,13 @@ describe('FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ FooterComponent ],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+      imports: [
+        RouterModule.forRoot(
+          []
+        )
+      ]
     })
     .compileComponents();
   }));
