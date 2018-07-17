@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { FooterComponent } from './footer.component';
-import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
-import { RouterModule } from '../../../node_modules/@angular/router';
+
 
 describe('FooterComponent', () => {
   let component: FooterComponent;

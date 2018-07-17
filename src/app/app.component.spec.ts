@@ -1,9 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
+
 import { HeaderComponent } from './header/header.component';
-import { RouterModule } from '../../node_modules/@angular/router';
 import { FooterComponent } from './footer/footer.component';
-import { APP_BASE_HREF } from '../../node_modules/@angular/common';
 
 describe('AppComponent', () => {
 

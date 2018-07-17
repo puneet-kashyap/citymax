@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+import { MatCardHeader, MatCardContent, MatCardActions, MatCard } from '@angular/material';
 
 import { CoursesComponent } from './courses.component';
-import { MatCardHeader, MatCardContent, MatCardActions, MatCard } from '../../../node_modules/@angular/material';
-import { RouterModule } from '../../../node_modules/@angular/router';
-import { APP_BASE_HREF } from '../../../node_modules/@angular/common';
+
 
 describe('CoursesComponent', () => {
   let component: CoursesComponent;

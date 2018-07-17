@@ -22,4 +22,9 @@ describe('AboutusComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display header About Us', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('About Us');
+  })
 });

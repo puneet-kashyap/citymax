@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { CourseComponent } from './course.component';
-import { RouterModule } from '../../../../node_modules/@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
-import { AngularFireModule } from '../../../../node_modules/angularfire2';
-import { AngularFirestoreModule } from '../../../../node_modules/angularfire2/firestore';
 import { environment } from '../../../environments/environment';
 
 describe('CourseComponent', () => {
