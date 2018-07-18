@@ -8,12 +8,12 @@
     <div class="col">
       <p>{{header}}</p>
       <div class="image">
-        <img [src]='img' alt="">
+        <img [src]='img' alt="About CityMax Enterprises">
       </div>
-      <p *ngFor='let desc of description'>
+      <p class="description" *ngFor='let desc of description'>
         {{desc}}
       </p>
-      <li *ngFor='let member of members'>
+      <li class="memberships" *ngFor='let member of members'>
         {{member}}
       </li>
     </div>
