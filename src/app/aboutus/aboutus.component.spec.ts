@@ -30,30 +30,26 @@ describe('AboutusComponent', () => {
   });
 
   it('should display image for about us', () => {
-    const comp = new AboutusComponent();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div.image>img').src).toEqual(comp.img);
+    expect(compiled.querySelector('div.image>img').src).toEqual(component.img);
   });
 
   it('should display header description in paragraph', () => {
-    const comp = new AboutusComponent();
     let result = fixture.debugElement.queryAll(By.css('.content'));
-    expect(result[0].nativeElement.textContent).toContain(comp.header);
+    expect(result[0].nativeElement.textContent).toContain(component.header);
   });
 
   it('should display list of memberships', () => {
-    const comp = new AboutusComponent();
     let result = fixture.debugElement.queryAll(By.css('.memberships'));
     result.forEach((x, i) => {
-      expect(x.nativeElement.textContent).toContain(comp.members[i]);
+      expect(x.nativeElement.textContent).toContain(component.members[i]);
     })
   });
 
   it('should display descriptions of about us in paragraph', () => {
-    const comp = new AboutusComponent();
     let result = fixture.debugElement.queryAll(By.css('.description'));
     result.forEach((x, i) => {
-      expect(x.nativeElement.textContent).toContain(comp.description[i]);
+      expect(x.nativeElement.textContent).toContain(component.description[i]);
     })
   });
 
