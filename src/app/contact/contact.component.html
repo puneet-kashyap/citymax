@@ -1,22 +1,22 @@
 <div class="container-fluid">
   <div class="row contact">
     <div class="col">
-      <h3>CityMax Enterprises</h3>
+      <h3>{{companyName}}</h3>
       <div class="title">
-        <h5>Gaurav Tandon</h5>
+        <h5>{{founder}}</h5>
         <span>Co-Founder</span>
       </div>
       <p>
-        <span *ngFor='let adrs of address'>
+        <span class='address' *ngFor='let adrs of address'>
           {{adrs}}
           <br>
         </span>
-        <span *ngFor='let phone of phones'>
+        <span class='phone' *ngFor='let phone of phones'>
           Ph:
           <a href="tel:{{phone}}">{{phone}}</a>
           <br>
         </span>
-        <a href="mailto:{{email}}">{{email}}</a>
+        <a class='email' href="mailto:{{email}}">{{email}}</a>
       </p>
 
     </div>
@@ -24,8 +24,7 @@
   <div class="row">
     <div class="col">
       <div class="google-maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13626.027609155175!2d75.4005254!3d31.3725837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x635ffc3ebf72dd53!2sBawa-Lalvani+Public+School!5e0!3m2!1sen!2sca!4v1531670869667"
-          width="100%" height="100%" allowfullscreen>
+        <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(gMapId)' width="100%" height="100%" allowfullscreen>
         </iframe>
       </div>
     </div>

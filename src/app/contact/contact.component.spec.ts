@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { ContactComponent } from './contact.component';
+
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -8,9 +9,9 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
+      declarations: [ContactComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +23,36 @@ describe('ContactComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display header details', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h3').textContent).toEqual(component.companyName);
+    expect(compiled.querySelector('div.title>h5').textContent).toEqual(component.founder);
+    expect(compiled.querySelector('div.title>span').textContent).toEqual("Co-Founder");
+  });
+
+  it('should display address of the location', () => {
+    let result = fixture.debugElement.queryAll(By.css('.address'));
+    result.forEach((x, i) => {
+      expect(x.nativeElement.textContent).toContain(component.address[i]);
+    })
+  });
+
+  it('should display all the phone numbers', () => {
+    let result = fixture.debugElement.queryAll(By.css('.phone'));
+    result.forEach((x, i) => {
+      expect(x.nativeElement.textContent).toContain(component.phones[i]);
+    })
+  });
+
+  it('should display email address', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a.email').href).toContain(component.email);
+  });
+
+  it('should display google maps in iframe', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div.google-maps>iframe').src).toEqual(component.gMapId);
+  })
+
 });
