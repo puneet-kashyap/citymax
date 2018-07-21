@@ -38,6 +38,7 @@ a {
 
 .right-section{
   text-align: center;
+  max-height: 15vh;
 }
 
 .rightLogo {

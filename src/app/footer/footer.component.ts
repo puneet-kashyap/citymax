@@ -10,8 +10,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  app = 'CityMax Enterprise';
-  email = 'info@citymax.com';
+  app = 'CityMax Enterprises';
+  email = 'info@citymaxenterprises.com';
 
   getYear(){
     return new Date().getFullYear();
@@ -28,7 +28,6 @@ export class FooterComponent implements OnInit {
     { name: 'Junior And High School Programmes', hyperlink: '/juniorandhigh' },
     { name: 'Language Programmes', hyperlink: '/language' },
     { name: 'Summer Camps', hyperlink: '/summercamp' },
-    // { name: 'Membership', hyperlink: '/inquiry' },
     { name: 'Semester Abroad', hyperlink: '/semster' },
     { name: 'Spending A Year Abroad', hyperlink: '/spendingyear' },
     { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate' }

@@ -1,9 +1,10 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CoursesComponent } from './courses.component';
+import { tick } from '../../../node_modules/@angular/core/src/render3';
 
 
 describe('CoursesComponent', () => {
@@ -61,13 +62,10 @@ describe('CoursesComponent', () => {
     });
   });
 
-  it('deatils button for course should be displayed', () => {
+  it('deatils button for course should be displayed', async(() => {
     let result = fixture.debugElement.queryAll(By.css('mat-card-actions>button'));
     result.forEach((x, i) => {
-      // x.nativeElement.click();
-      fixture.whenStable().then(()=> {
-      });
       expect(x.nativeElement.getAttribute('ng-reflect-router-link')).toEqual('/' + component.courses[i].id);
     });
-  });
+  }));
 });
