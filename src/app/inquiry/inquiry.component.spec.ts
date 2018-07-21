@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '../../../node_modules/@angular/forms';
-import { MatAutocompleteModule, MatCard, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule } from '../../../node_modules/@angular/material';
-import { BrowserAnimationsModule } from '../../../node_modules/@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { MatAutocompleteModule, MatCard, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { InquiryComponent } from './inquiry.component';
 
 

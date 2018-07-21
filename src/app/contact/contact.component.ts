@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public sanitizer: DomSanitizer){}
+  
   ngOnInit() {
     window.scrollTo(0, 0);
   }
+
+  companyName = "CityMax Enterprises";
+  founder = "Gaurav Tandon";
 
   address = [
     'Jalandhar Road,',
@@ -26,6 +30,6 @@ export class ContactComponent implements OnInit {
 
   email = 'citimaxenterprises@gmail.com';
 
-  gMapId = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2896.45764142941!2d-80.4946381845088!3d43.451042079128726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882bf4f36b2da269%3A0xe24562dfa877521b!2s183+King+St+W%2C+Kitchener%2C+ON+N2G+1A7!5e0!3m2!1sen!2sca!4v1527865612018"
+  gMapId = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13626.027609155175!2d75.4005254!3d31.3725837!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x635ffc3ebf72dd53!2sBawa-Lalvani+Public+School!5e0!3m2!1sen!2sca!4v1531670869667";
 
 }
