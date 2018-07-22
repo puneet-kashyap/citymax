@@ -33,82 +33,82 @@ const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'contact',
     component: ContactComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'inquiry',
     component: InquiryComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'courses',
     component: CoursesComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'aboutus',
     component: AboutusComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'study-in-canada',
     component: StudiesComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'study-in-australia',
     component: StudiesComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'study-in-newzealand',
     component: StudiesComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'undergraduate',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'vocational',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'spendingyear',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'internship',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'juniorandhigh',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'language',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'summercamp',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
   {
     path: 'semster',
     component: CourseComponent,
-    data: { title: "CityMax Enterprises" }
+    data: { title: "CitiMax Enterprises" }
   },
 ]
 

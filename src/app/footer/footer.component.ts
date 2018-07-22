@@ -10,8 +10,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  app = 'CityMax Enterprises';
-  email = 'info@citymaxenterprises.com';
+  app = 'CitiMax Enterprises';
+  email = 'info@citimaxenterprises.com';
 
   getYear(){
     return new Date().getFullYear();
