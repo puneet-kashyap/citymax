@@ -36,7 +36,7 @@ export class CoursesComponent implements OnInit {
       id: 'language',
       name: 'Language Programmes',
       img: `https://images.unsplash.com/photo-1512813195386-6cf811ad3542?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5dcdfe3755e6a685cc76d0d806dc217d&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb`,
-      description: 'At CityMax Enterprises , we are promoters of foreign languages, providing you with the option to choose from the list of best language schools available around the globe. Before migrating to any country you need to be well-versed with the native language, let it be English, you need to be fluent in English in order to settle in any English speaking country. '
+      description: 'At CitiMax Enterprises , we are promoters of foreign languages, providing you with the option to choose from the list of best language schools available around the globe. Before migrating to any country you need to be well-versed with the native language, let it be English, you need to be fluent in English in order to settle in any English speaking country. '
     },
     {
       id: 'summercamp',

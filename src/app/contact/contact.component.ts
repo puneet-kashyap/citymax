@@ -14,18 +14,22 @@ export class ContactComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  companyName = "CityMax Enterprises";
-  founder = "Gaurav Tandon";
+  companyName = "CitiMax Enterprises";
+  founders = [
+    {
+      name: "Gaurav Tandon",
+      phone: '+91-9888213040'
+    },
+    {
+      name: "Jatinder Walia",
+      phone: '+91-9417540046'
+    }
+  ]
 
   address = [
     'Jalandhar Road,',
     'Opposite Bawa-Lalvani Public school',
     'Kapurthala, Punjab India'
-  ]
-
-  phones = [
-    '+91-9417540046' ,
-    '+91-9888213040'
   ]
 
   email = 'citimaxenterprises@gmail.com';
