@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-inquiry',
@@ -10,7 +11,7 @@ export class InquiryComponent implements OnInit {
 
   submitted = false;
   submittedForm;
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -19,11 +20,11 @@ export class InquiryComponent implements OnInit {
   options: string[] = ['America', 'Australia', 'Canada', 'United Kingdom', 'New Zealand', 'Other'];
 
   onSubmit(form: NgForm) {
-    console.log(form);
     if (form.valid) {
       this.submittedForm = form.value;
       this.submitted = true;
+      this.firebaseService.writeToDatabase('Inquiry', form.value);
     }
-}
+  }
 
 }
