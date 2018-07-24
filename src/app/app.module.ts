@@ -106,7 +106,7 @@ const appRoutes: Routes = [
     data: { title: "CitiMax Enterprises" }
   },
   {
-    path: 'semster',
+    path: 'semester',
     component: CourseComponent,
     data: { title: "CitiMax Enterprises" }
   },

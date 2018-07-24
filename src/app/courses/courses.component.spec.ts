@@ -1,10 +1,9 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CoursesComponent } from './courses.component';
-import { tick } from '../../../node_modules/@angular/core/src/render3';
 
 
 describe('CoursesComponent', () => {
@@ -50,7 +49,7 @@ describe('CoursesComponent', () => {
   it('images for course should be displayed', () => {
     let result = fixture.debugElement.queryAll(By.css('img'));
     result.forEach((x, i) => {
-      expect(x.nativeElement.src).toEqual(component.courses[i].img);
+      expect(x.nativeElement.src).toContain(component.courses[i].img);
       expect(x.nativeElement.alt).toEqual(component.courses[i].name);
     });
   });
