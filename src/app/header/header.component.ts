@@ -12,4 +12,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  routes = [
+    { routeLink: '/', routeName: 'Home' },
+    { routeLink: '/courses', routeName: 'Courses' },
+    { routeLink: '/inquiry', routeName: 'Inquiry' },
+    { routeLink: '/contact', routeName: 'Contact Us' },
+  ]
+
 }
