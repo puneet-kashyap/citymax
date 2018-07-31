@@ -12,6 +12,8 @@ export class CoursesComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
+  buttonName = 'DETAILS';
+
   courses = [
     
     {
