@@ -6,20 +6,8 @@
     </div>
     <app-carousel></app-carousel>
     <div class="col-12">
-      <p>
-        We were established in the year 2018 and is pioneer and leaders in Punjab state, India for referring students all across
-        the globe. We hold a large number of representations for various universities, institute and schools all around the
-        world. We hold a track record of sending huge number of students in the past.
-      </p>
-      <p>
-        Education is that mighty attribute that takes one on top of World's Successes and Achievements. Being educated sets you wise,
-        practical and self- dependent and a foundation to lighten humanity for your community, nation and world. So with
-        diversified thoughts and tastes we are here to render you services regarding Educating Abroad.
-      </p>
-      <p>
-        Education could be done anywhere according to ones' requirements with the discipline of their interest. We offer guidance
-        to Canada, Australia, New Zealand, USA, UK and other destinations. Now-a-days we have so many universities and affiliated
-        institutes, that offer wide range of courses of various fields.
+      <p *ngFor='let content of homeContents'>
+        {{content}}
       </p>
     </div>
 
@@ -28,9 +16,9 @@
         <mat-card-content>
           <div class="row">
             <div class="col-sm-6 padding">
-                <mat-card-title>
-                    <h3>Services we offer:</h3>
-                  </mat-card-title>
+              <mat-card-title>
+                <h3>Services we offer:</h3>
+              </mat-card-title>
               <div class="links" *ngFor='let service of services'>
                 <mat-icon>check_circle_outline</mat-icon>
                 <span>{{service}}</span>
@@ -41,7 +29,7 @@
                 <h3>Overseas Education</h3>
               </mat-card-title>
               <div class="links" *ngFor='let link of links'>
-                  <mat-icon>check_circle_outline</mat-icon>
+                <mat-icon>check_circle_outline</mat-icon>
                 <a routerLink={{link.hyperlink}} routerLinkActive="active">{{link.name}}</a>
               </div>
             </div>
