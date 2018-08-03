@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var require: any;
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  rightLogo = require('../../assets/images/globeBooks.png');
 
   routes = [
     { routeLink: '/', routeName: 'Home' },
