@@ -26,12 +26,7 @@ describe('AboutusComponent', () => {
 
   it('should display title', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div.heading>h1').textContent).toEqual('About Us');
-  });
-
-  it('should display image for about us', () => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div.image>img').src).toEqual(component.img);
+    expect(compiled.querySelector('div.heading>h1').textContent).toEqual(component.title);
   });
 
   it('should display header description in paragraph', () => {
@@ -39,17 +34,23 @@ describe('AboutusComponent', () => {
     expect(result[0].nativeElement.textContent).toContain(component.header);
   });
 
-  it('should display list of memberships', () => {
-    let result = fixture.debugElement.queryAll(By.css('.memberships'));
-    result.forEach((x, i) => {
-      expect(x.nativeElement.textContent).toContain(component.members[i]);
-    })
+  it('should display image for about us', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div.image>img').src).toEqual(component.img.src);
+    expect(compiled.querySelector('div.image>img').alt).toEqual(component.img.alt);
   });
 
   it('should display descriptions of about us in paragraph', () => {
     let result = fixture.debugElement.queryAll(By.css('.description'));
     result.forEach((x, i) => {
       expect(x.nativeElement.textContent).toContain(component.description[i]);
+    })
+  });
+
+  it('should display list of memberships', () => {
+    let result = fixture.debugElement.queryAll(By.css('.memberships'));
+    result.forEach((x, i) => {
+      expect(x.nativeElement.textContent).toContain(component.members[i]);
     })
   });
 

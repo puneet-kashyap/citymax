@@ -6,16 +6,13 @@
     </h2>
     <span class="spacer"></span>
     <div class="right-section">
-        <img src="../../assets/images/globeBooks.png" class="img-fluid rightLogo float-right" alt="">
+      <img [src]='rightLogo' class="img-fluid rightLogo float-right" alt="CitiMax">
     </div>
 
   </div>
   <div class="row second-row">
-    <a routerLink="/" routerLinkActive="active">Home
-      <span class="sr-only">(current)</span>
+    <a *ngFor='let route of routes' [routerLink]='route.routeLink' routerLinkActive="active">
+      {{route.routeName}}
     </a>
-    <a routerLink="/courses" routerLinkActive="active">Courses</a>
-    <a routerLink="/inquiry" routerLinkActive="active">Inquiry</a>
-    <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
   </div>
 </div>

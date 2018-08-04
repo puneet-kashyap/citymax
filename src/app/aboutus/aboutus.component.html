@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col heading">
-      <h1>About Us</h1>
+      <h1>{{title}}</h1>
     </div>
   </div>
   <div class="row content">
     <div class="col">
       <p>{{header}}</p>
       <div class="image">
-        <img [src]='img' alt="About CitiMax Enterprises">
+        <img [src]='img.src' [alt]='img.alt'>
       </div>
       <p class="description" *ngFor='let desc of description'>
         {{desc}}

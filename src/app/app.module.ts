@@ -13,9 +13,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { RoutesModule } from './routes/routes.module';
 import { environment } from '../environments/environment';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AppComponent } from './app.component';
@@ -29,88 +31,6 @@ import { HomeComponent } from './home/home.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { StudiesComponent } from './studies/studies.component';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'contact',
-    component: ContactComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'inquiry',
-    component: InquiryComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'courses',
-    component: CoursesComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'aboutus',
-    component: AboutusComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'study-in-canada',
-    component: StudiesComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'study-in-australia',
-    component: StudiesComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'study-in-newzealand',
-    component: StudiesComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'undergraduate',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'vocational',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'spendingyear',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'internship',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'juniorandhigh',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'language',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'summercamp',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-  {
-    path: 'semester',
-    component: CourseComponent,
-    data: { title: "CitiMax Enterprises" }
-  },
-]
 
 @NgModule({
   declarations: [
@@ -143,9 +63,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    RouterModule.forRoot(
-      appRoutes
-    )
+    RoutesModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
