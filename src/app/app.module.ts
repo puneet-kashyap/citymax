@@ -30,6 +30,7 @@ import { CarouselComponent } from './home/carousel/carousel.component';
 import { HomeComponent } from './home/home.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { StudiesComponent } from './studies/studies.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { StudiesComponent } from './studies/studies.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     RoutesModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
