@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="row reservation">
+    <mat-card>
+      <div>
+        <h3>Chat with us</h3>
+
+        <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+          <div class='message-group' *ngFor='let messages of msgGroup'>
+            <div *ngIf="messages.img=='user'" class='user-message-group'>
+              <div class='user-message-img'>
+                  <img class="img-user" alt="User" />
+              </div>
+              <div class='user-message'>{{messages.user}}</div>
+            </div>
+
+          </div>
+
+          <input ngModel name="msg" matInput autocomplete='msg' placeholder="Enter your message" required>
+
+          <button type="submit" color="primary">
+            Submit
+          </button>
+
+        </form>
+      </div>
+
+    </mat-card>
+  </div>
+
+</div>

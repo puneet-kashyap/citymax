@@ -31,6 +31,7 @@ import { HomeComponent } from './home/home.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { StudiesComponent } from './studies/studies.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     StudiesComponent,
     CourseComponent,
     AboutusComponent,
-    CarouselComponent
+    CarouselComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
