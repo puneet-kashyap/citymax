@@ -1,4 +1,10 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewChecked } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  AfterViewChecked
+} from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { DialogflowService } from "./dialogflow.service";
 
@@ -8,14 +14,15 @@ import { DialogflowService } from "./dialogflow.service";
   styleUrls: ["./chat.component.css"]
 })
 export class ChatComponent implements OnInit, AfterViewChecked {
-  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+  @ViewChild("scrollMe")
+  private myScrollContainer: ElementRef;
   constructor(private dialogflowService: DialogflowService) {}
 
   inputMsg: string = "";
   chatMessages: {}[] = [];
 
   ngOnInit() {}
-     ngAfterViewChecked() { }
+  ngAfterViewChecked() {}
 
   scrollToBottom() {
     this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
@@ -23,10 +30,8 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      console.log(form.value.msg);
       this.chatMessages.push({ msg: form.value.msg, msgFrom: "user" });
       this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
-        console.log(res.result.fulfillment.speech);
         this.chatMessages.push({
           msg: res.result.fulfillment.speech,
           msgFrom: "bot"
