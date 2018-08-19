@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+ import { HttpModule } from '@angular/http';
 import { RoutesModule } from './routes/routes.module';
 import { environment } from '../environments/environment';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -51,6 +51,7 @@ import { ChatComponent } from './chat/chat.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     MatFormFieldModule,
     MatDividerModule,

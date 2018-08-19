@@ -1,32 +1,37 @@
 <div class="container">
 
   <div class="row reservation">
-    <mat-card>
-      <div>
-        <h3>Chat with us</h3>
-
-        <form class="checkout-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-
-          <div class='message-group' *ngFor='let messages of msgGroup'>
-            <div *ngIf="messages.img=='user'" class='user-message-group'>
-              <div class='user-message-img'>
-                  <img class="img-user" alt="User" />
-              </div>
-              <div class='user-message'>{{messages.user}}</div>
+    <div class="col-md-8">
+        <mat-card>
+            <div>
+              <h3>Chat with us</h3>
+      
+              <form class="chat-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div #scrollMe class="chat-box">
+                  <div  class='message-block' *ngFor='let message of chatMessages; let last = last'>
+                    <div class='message-group'>
+                      <div [class]="message.msgFrom == 'user' ? 'user-block' : 'bot-block' ">
+                        <img [class]="message.msgFrom == 'user' ? 'img-user' : 'img-bot' " [alt]="message.msgFrom == 'user' ? 'User' : 'Bot' " />
+                        <div [class]="message.msgFrom == 'user' ? 'user-message' : 'bot-message' ">
+                          {{message.msg}}
+                          {{last ? scrollToBottom() : ''}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <input ngModel name="msg" matInput autocomplete='msg' placeholder="Enter your message" required>
+      
+                <button type="submit" color="primary">
+                  Submit
+                </button>
+              </form>
+      
             </div>
-
-          </div>
-
-          <input ngModel name="msg" matInput autocomplete='msg' placeholder="Enter your message" required>
-
-          <button type="submit" color="primary">
-            Submit
-          </button>
-
-        </form>
-      </div>
-
-    </mat-card>
+      
+          </mat-card>
+    </div>
   </div>
 
 </div>
