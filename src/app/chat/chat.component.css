@@ -1,6 +1,6 @@
 .checkout-form {
     min-width: 150px;
-    max-width: 500px;
+    max-width: 80vh;
     width: 100%;
   }
   
@@ -33,7 +33,7 @@ h3{
   color: #1b5069;
 }
 
-.user-message-group {
+.message-group {
     display: flex;
 }
 
@@ -44,14 +44,21 @@ h3{
 }
 
 .user-message {
-    text-align: left;
-    width: 100%;
-    float: left;
-    color : 1b5069;
-    border-radius: 25px;
+    text-align: center;
+    color : white;
+    border-radius: 20px;
     padding: 10px;
     margin: 10px;
-    background-color: red;
+    background-color: rgb(63, 81, 181);
+}
+
+.bot-message {
+    text-align: center;
+    color : white;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(178, 34, 34);
 }
 
 .img-user {
@@ -60,3 +67,30 @@ h3{
     display: inline-block;
     content: url("http://icons.iconarchive.com/icons/mirella-gabriele/valentine/256/Music-Heart-icon.png");
   }
+
+.img-bot {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    content: url("https://citimaxenterprises.com/globeBooks.0584de1d0328b2a550b3.png");
+  }
+
+.user-block {
+  display: flex;
+}
+.bot-block {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+mat-card {
+  width: 100%;
+}
+
+.chat-box {
+  height: 50vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
