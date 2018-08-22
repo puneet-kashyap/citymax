@@ -33,7 +33,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       this.chatMessages.push({ msg: form.value.msg, msgFrom: "user" });
       this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
         this.chatMessages.push({
-          msg: res.result.fulfillment.speech,
+          msg: res,
           msgFrom: "bot"
         });
       });
