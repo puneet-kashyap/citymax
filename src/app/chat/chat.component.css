@@ -77,6 +77,10 @@ mat-card {
   width: 100%;
 }
 
+.chat-col {
+  padding: 0px;
+}
+
 .chat-box {
   height: 50vh;
   overflow-y: scroll;
@@ -94,6 +98,7 @@ mat-card {
 
 .user-input {
   display: flex;
+  justify-content: center;
 }
 
 mat-form-field {
