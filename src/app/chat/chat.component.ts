@@ -37,7 +37,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
           msgFrom: "bot"
         });
       });
-      form.reset();
+      form.resetForm();
     }
   }
 }
