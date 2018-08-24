@@ -54,14 +54,14 @@ h3 {
   height: 50px;
   width: 50px;
   display: inline-block;
-  content: url("http://icons.iconarchive.com/icons/mirella-gabriele/valentine/256/Music-Heart-icon.png");
+  content: url("../../assets/images/logo_mirror.png");
 }
 
 .img-bot {
   height: 50px;
   width: 50px;
   display: inline-block;
-  content: url("https://citimaxenterprises.com/globeBooks.0584de1d0328b2a550b3.png");
+  content: url("../../favicon.ico");
 }
 
 .user-block {
