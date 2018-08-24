@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-
+ import { HttpModule } from '@angular/http';
 import { RoutesModule } from './routes/routes.module';
 import { environment } from '../environments/environment';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -31,6 +31,7 @@ import { HomeComponent } from './home/home.component';
 import { InquiryComponent } from './inquiry/inquiry.component';
 import { StudiesComponent } from './studies/studies.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -45,10 +46,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     StudiesComponent,
     CourseComponent,
     AboutusComponent,
-    CarouselComponent
+    CarouselComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     MatFormFieldModule,
     MatDividerModule,
