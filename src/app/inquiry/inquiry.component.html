@@ -30,7 +30,7 @@
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input ngModel name="date" matInput [matDatepicker]="picker" placeholder="Date to call">
+            <input ngModel name="date" matInput [min]="minDate" [matDatepicker]="picker" placeholder="Date to call">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
