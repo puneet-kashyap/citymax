@@ -8,6 +8,11 @@
 
 a {
   color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
 }
 
 .row {
@@ -28,6 +33,10 @@ a {
   padding: 10px 25px 10px 25px;
   color: wheat;
   background-color: brown;
+}
+
+.second-row:hover {
+  background-color: black;
 }
 
 .first-row {
