@@ -1,7 +1,7 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const dialogflow = require("./dialogflow/dialogflow.service");
+const dialogflow = require("./services/dialogflow/dialogflow.service");
 const emailService = require("./services/nodemailer/email.service");
 
 const app = express();
