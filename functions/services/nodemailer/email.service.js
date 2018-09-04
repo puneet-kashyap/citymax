@@ -13,7 +13,7 @@ const sendInquiryEmail = form => {
   const mailOptions = {
     from: `CitiMax Enterprises <noreply@citimaxenterprises.com>`,
     to: functions.config().email.recipient,
-    cc: functions.config().email.recipient_cc
+    bcc: functions.config().email.recipient_bcc
   };
 
   mailOptions.subject = `CitMax inquiry request`;
