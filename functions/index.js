@@ -8,7 +8,7 @@ const app = express();
 app.use(cors({ origin: true }));
 
 app.get("/chat", (req, res) => {
-  dialogflow.getResponse(req.query.msg, res);
+  dialogflow.getResponse(req.query, res);
 });
 
 exports.api = functions.https.onRequest(app);
