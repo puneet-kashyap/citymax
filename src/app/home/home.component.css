@@ -1,5 +1,6 @@
 .links {
     display: flex;
+    align-items: flex-start;
 }
 
 .row {
@@ -18,6 +19,7 @@ h3 {
 
 mat-icon {
     padding-right: 35px;
+    -webkit-text-fill-color: brown;
 }
 
 mat-card {

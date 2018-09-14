@@ -19,9 +19,15 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   constructor(private dialogflowService: DialogflowService) {}
 
   inputMsg: string = "";
-  chatMessages: {}[] = [];
+  chatMessages = [];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dialogflowService.items.subscribe(data => {
+      if(data){
+        this.chatMessages = data['chat'];
+      }
+    })
+  }
   ngAfterViewChecked() {}
 
   scrollToBottom() {
@@ -30,12 +36,9 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      this.chatMessages.push({ msg: form.value.msg, msgFrom: "user" });
+      this.dialogflowService.msgToDb({ msg: form.value.msg, msgFrom: "user" })
       this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
-        this.chatMessages.push({
-          msg: res,
-          msgFrom: "bot"
-        });
+        this.dialogflowService.msgToDb({ msg: res, msgFrom: "bot" })
       });
       form.resetForm();
     }
