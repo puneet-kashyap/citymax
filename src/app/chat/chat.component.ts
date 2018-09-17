@@ -3,7 +3,8 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  AfterViewChecked
+  AfterViewChecked,
+  HostListener
 } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { DialogflowService } from "./dialogflow.service";
@@ -17,7 +18,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   @ViewChild("scrollMe")
   private myScrollContainer: ElementRef;
   constructor(private dialogflowService: DialogflowService) {}
-
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.endChat();
+  }
   inputMsg: string = "";
   chatMessages = [];
 
@@ -29,6 +33,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     })
   }
   ngAfterViewChecked() {}
+
+  endChat(){
+    this.dialogflowService.msgToDb({ msg: "User left the chat session", msgFrom: "user" })
+  }
 
   scrollToBottom() {
     this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
