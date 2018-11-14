@@ -11,6 +11,15 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.onscroll = this.shrink;
+  }
+
+  shrink() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.getElementById("brand").classList.remove("shrink")
+    } else {
+      document.getElementById("brand").classList.add("shrink")
+    }
   }
 
   rightLogo = require('../../assets/images/globeBooks.png');

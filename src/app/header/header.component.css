@@ -40,10 +40,18 @@ a:hover {
 }
 
 .first-row {
+  display: flex;
+  flex-wrap: inherit;
   padding: 25px 25px 5px 25px;
   color: white;
-  max-height: 30vh; 
+  max-height: 30vh;
+  font-size: 5vh;
 }
+
+.shrink span {
+  display: block;
+}
+
 
 #logo-name {
   animation-name: moveInRight;
@@ -86,5 +94,11 @@ a:hover {
   100%{
     opacity: 1;
     transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: 30px;
   }
 }

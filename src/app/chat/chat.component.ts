@@ -3,7 +3,8 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  AfterViewChecked
+  AfterViewChecked,
+  HostListener
 } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { DialogflowService } from "./dialogflow.service";
@@ -17,12 +18,25 @@ export class ChatComponent implements OnInit, AfterViewChecked {
   @ViewChild("scrollMe")
   private myScrollContainer: ElementRef;
   constructor(private dialogflowService: DialogflowService) {}
-
+  @HostListener('window:beforeunload', ['$event'])
+  beforeunloadHandler(event) {
+    this.endChat();
+  }
   inputMsg: string = "";
-  chatMessages: {}[] = [];
+  chatMessages = [];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dialogflowService.items.subscribe(data => {
+      if(data){
+        this.chatMessages = data['chat'];
+      }
+    })
+  }
   ngAfterViewChecked() {}
+
+  endChat(){
+    this.dialogflowService.msgToDb({ msg: "User left the chat session", msgFrom: "user" })
+  }
 
   scrollToBottom() {
     this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
@@ -30,12 +44,9 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      this.chatMessages.push({ msg: form.value.msg, msgFrom: "user" });
+      this.dialogflowService.msgToDb({ msg: form.value.msg, msgFrom: "user" })
       this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
-        this.chatMessages.push({
-          msg: res,
-          msgFrom: "bot"
-        });
+        this.dialogflowService.msgToDb({ msg: res, msgFrom: "bot" })
       });
       form.resetForm();
     }

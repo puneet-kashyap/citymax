@@ -13,7 +13,7 @@ export class StudiesComponent implements OnInit {
   items: Observable<any[]>;
 
   constructor(private router: Router, private db: AngularFirestore) {
-    this.items = db.collection('colleges').valueChanges();
+    this.items = this.db.collection('colleges').valueChanges();
   }
 
   ngOnInit() {

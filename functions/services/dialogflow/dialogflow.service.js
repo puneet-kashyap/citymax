@@ -5,7 +5,6 @@ const request = require("request");
 const dToken = process.env.DIALOGFLOW_TOKEN;
 
 const getResponse = (query, res) => {
-  let randomNumber = Math.floor((Math.random() * 1000) + 1);
   let options = {
     method: "POST",
     url: "https://api.dialogflow.com/v1/query",
@@ -14,7 +13,7 @@ const getResponse = (query, res) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${dToken}`
     },
-    body: `{lang: "en",query: "${query}",sessionId: "${randomNumber}"}`
+    body: `{lang: "en",query: "${query.msg}",sessionId: "${query.sessionId}"}`
   };
 
   request(options, function(error, response, body) {
