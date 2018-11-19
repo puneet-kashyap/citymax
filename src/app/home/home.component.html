@@ -6,9 +6,7 @@
     </div>
     <app-carousel></app-carousel>
     <div class="col-12">
-      <p *ngFor='let content of homeContents'>
-        {{content}}
-      </p>
+      <p *ngFor="let content of homeContents">{{ content }}</p>
     </div>
 
     <div class="col-12">
@@ -16,21 +14,21 @@
         <mat-card-content>
           <div class="row">
             <div class="col-sm-6 padding">
-              <mat-card-title>
-                <h3>Services we offer:</h3>
-              </mat-card-title>
-              <div class="links" *ngFor='let service of services'>
+              <mat-card-title> <h3>Services we offer:</h3> </mat-card-title>
+              <div class="links" *ngFor="let service of services">
                 <mat-icon>check_circle_outline</mat-icon>
-                <span>{{service}}</span>
+                <span>{{ service }}</span>
               </div>
             </div>
             <div class="col-sm-6 padding">
-              <mat-card-title>
-                <h3>Overseas Education</h3>
+              <mat-card-title> 
+                <h3>Overseas Education</h3> 
               </mat-card-title>
-              <div class="links" *ngFor='let link of links'>
+              <div class="links" *ngFor="let link of links">
                 <mat-icon>check_circle_outline</mat-icon>
-                <a routerLink={{link.hyperlink}} routerLinkActive="active">{{link.name}}</a>
+                <a routerLink="{{link.hyperlink}}" routerLinkActive="active">{{
+                  link.name
+                }}</a>
               </div>
             </div>
           </div>
@@ -38,5 +36,5 @@
       </mat-card>
     </div>
   </div>
-  <app-contact></app-contact>
 </div>
+<app-contact></app-contact>
