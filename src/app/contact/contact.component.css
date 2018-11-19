@@ -13,10 +13,16 @@
 }
 
 h3 {
+    margin-top: 50px;
+    text-align: center;
     color: #3f51b5;
 }
 
 mat-card {
     background-color: blanchedalmond;
     margin-bottom: 10px;
+}
+
+.chat {
+    justify-content: center;
 }
