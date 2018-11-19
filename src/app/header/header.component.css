@@ -110,7 +110,7 @@ a:hover {
     display: none;
   }
   .expand img {
-    display: inline;
+    display: inline-block;
   }
   h2 {
     font-size: 30px;
