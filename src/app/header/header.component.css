@@ -2,7 +2,7 @@
   flex: 1 1 auto;
 }
 
-.header{
+.header {
   background-color: #881b0f;
 }
 
@@ -27,7 +27,7 @@ a:hover {
   background-color: #881b0f;
 }
 
-.second-row{
+.second-row {
   display: flex;
   justify-content: space-evenly;
   padding: 10px 25px 10px 25px;
@@ -42,62 +42,76 @@ a:hover {
 .first-row {
   display: flex;
   flex-wrap: inherit;
-  padding: 25px 25px 5px 25px;
-  color: white;
-  max-height: 30vh;
-  font-size: 5vh;
+  padding: 10px;
+  justify-content: space-between;
+  transition: 0.2s;
 }
 
-.shrink span {
+.expand h2 a span {
   display: block;
 }
 
+.expand {
+  padding: 25px;
+}
 
 #logo-name {
   animation-name: moveInRight;
   animation-duration: 3s;
 }
 
-.right-section{
+.right-section {
+  max-height: 90%;
   text-align: center;
-  max-height: 15vh;
 }
 
 .rightLogo {
-  max-height: 100%;
+  max-height: 90%;
   animation-name: moveInLeft;
-  animation-duration: 3s;
+  animation-duration: 1s;
 }
 
 @keyframes moveInLeft {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(-60px);
   }
-  80%{
+  80% {
     transform: translateX(10px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
   }
 }
 
 @keyframes moveInRight {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(10px);
   }
-  80%{
+  80% {
     transform: translateX(-10px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translate(0);
   }
 }
 
 @media screen and (max-width: 600px) {
+  .first-row {
+    justify-content: center;
+  }
+  .expand {
+    justify-content: space-between;
+  }
+  .first-row img {
+    display: none;
+  }
+  .expand img {
+    display: inline;
+  }
   h2 {
     font-size: 30px;
   }
