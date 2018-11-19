@@ -1,48 +1,46 @@
-<div class="container">
-
+<div class="container-fluid">
   <div class="row">
     <div class="col">
-      <h3>{{companyName}}</h3>
+      <h3>{{ companyName }}</h3>
     </div>
   </div>
 
   <div class="row contact">
-    <div class="col" *ngFor='let founder of founders'>
+    <div class="col" *ngFor="let founder of founders">
       <mat-card>
         <div class="title">
-          <h5>{{founder.name}}</h5>
+          <h5>{{ founder.name }}</h5>
           <span>Co-Founder</span>
         </div>
         <p>
-          <span class='address' *ngFor='let adrs of address'>
-            {{adrs}}
-            <br>
+          <span class="address" *ngFor="let adrs of address">
+            {{ adrs }} <br />
           </span>
-          <span class='phone'>
-            Ph:
-            <a href="tel:{{founder.phone}}">{{founder.phone}}</a>
-            <br>
+          <span class="phone">
+            Ph: <a href="tel:{{founder.phone}}">{{ founder.phone }}</a> <br />
           </span>
-          <a class='email' href="mailto:{{email}}">{{email}}</a>
+          <a class="email" href="mailto:{{email}}">{{ email }}</a>
         </p>
       </mat-card>
     </div>
   </div>
 
   <div class="row chat">
-    <div class="col-md-8 chat-col">
-      <app-chat></app-chat>
-    </div>
+    <div class="col-md-8 chat-col noPadding"><app-chat></app-chat></div>
   </div>
-  
 
   <div class="row">
-    <div class="col">
+    <div class="col noPadding">
       <div class="google-maps">
-        <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(gMapId)' title="google-maps" width="100%" height="100%" allowfullscreen>
+        <iframe
+          [src]="gMapId"
+          title="google-maps"
+          width="100%"
+          height="100%"
+          allowfullscreen
+        >
         </iframe>
       </div>
     </div>
   </div>
-
 </div>
