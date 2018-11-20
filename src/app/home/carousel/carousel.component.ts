@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var require: any;
 
 @Component({
   selector: 'app-carousel',
@@ -6,21 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   images = [
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/bridges/sydney-harbour-bridge-header.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/cities/sydney-harbour-australia-header.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/cities/cities-travel-world-header-2915.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/landmarks-monuments/gate-of-victory-paris-france-header.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/cities/long-beach-california-header.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/landmarks-monuments/grand-triumphal-colosseum-rome-italy-header.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/cities/cities-travel-world-header-2911.jpg',
-    'https://www.freewebheaders.com/wordpress/wp-content/gallery/planes/plane-take-off-start-point-header.jpg',
-  ]
-
+    require('../../../assets/images/carousel/hampton-court-palace-london-uk-header-min.jpg'),
+    require('../../../assets/images/carousel/sydney-harbour-bridge-header-min.jpg'),
+    require('../../../assets/images/carousel/sydney-harbour-australia-header-min.jpg'),
+    require('../../../assets/images/carousel/cities-travel-world-header-2915-min.jpg'),
+    require('../../../assets/images/carousel/long-beach-california-header-min.jpg'),
+    require('../../../assets/images/carousel/grand-triumphal-colosseum-rome-italy-header-min.jpg'),
+    require('../../../assets/images/carousel/cities-travel-world-header-2911-min.jpg')
+  ];
 }
