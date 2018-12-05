@@ -30,7 +30,8 @@ export class FooterComponent implements OnInit {
     { name: 'Summer Camps', hyperlink: '/summercamp' },
     { name: 'Semester Abroad', hyperlink: '/semster' },
     { name: 'Spending A Year Abroad', hyperlink: '/spendingyear' },
-    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate' }
+    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate' },
+    { name: 'Sign In', hyperlink: '/signin' }
   ]
 
 }
