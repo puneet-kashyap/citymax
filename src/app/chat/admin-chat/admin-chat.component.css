@@ -1,0 +1,34 @@
+.container {
+  text-align: center;
+  margin: 5px;
+  max-width: 1500px !important;
+}
+
+.chats {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.sessions {
+  max-width: 30%;
+  flex-direction: row;
+}
+
+.session {
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.chat {
+  width: 100%;
+}
+
+span {
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+  .chats {
+      flex-direction: column;
+  }
+}

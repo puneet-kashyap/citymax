@@ -1,0 +1,17 @@
+<section class="container" *ngIf="display">
+    <header>
+        <h1>Admin Chat</h1>
+    </header>
+
+    <div class="chats">
+        <div class="sessions">
+            <div class='session' *ngFor='let session of chatSessions' (click)="getChatSession(session)">
+                <span>{{session}}</span>
+            </div>
+        </div>
+        <div class="chat">
+            <app-chat [chatDbMessages]='chatDbMessages'></app-chat>
+        </div>
+    </div>
+
+</section>
