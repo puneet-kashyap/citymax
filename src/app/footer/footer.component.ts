@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,15 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) {}
   ngOnInit() {
+    this.firebaseService.auth.onAuthStateChanged(user => {
+      this.signInState = user ? 'Sign Out' : 'Sign In';
+    });
   }
 
-  app = 'CitiMax Enterprises';
-  email = 'info@citimaxenterprises.com';
+  app: string = 'CitiMax Enterprises';
+  email: string = 'info@citimaxenterprises.com';
+  signInState: string;
 
-  getYear(){
+  getYear() {
     return new Date().getFullYear();
+  }
+
+  loginState() {
+    if (this.signInState === 'Sign Out') {
+      this.firebaseService.auth.signOut().then(() => {
+        console.log('User Signed Out');
+      });
+    }
   }
 
   links = [
@@ -28,10 +41,8 @@ export class FooterComponent implements OnInit {
     { name: 'Junior And High School Programmes', hyperlink: '/juniorandhigh' },
     { name: 'Language Programmes', hyperlink: '/language' },
     { name: 'Summer Camps', hyperlink: '/summercamp' },
-    { name: 'Semester Abroad', hyperlink: '/semster' },
+    { name: 'Semester Abroad', hyperlink: '/semester' },
     { name: 'Spending A Year Abroad', hyperlink: '/spendingyear' },
-    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate' },
-    { name: 'Sign In', hyperlink: '/signin' }
-  ]
-
+    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate'}
+  ];
 }

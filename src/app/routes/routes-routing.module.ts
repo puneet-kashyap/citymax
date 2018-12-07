@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutusComponent } from '../aboutus/aboutus.component';
 import { ContactComponent } from '../contact/contact.component';
+import { CourseComponent } from '../courses/course/course.component';
 import { CoursesComponent } from '../courses/courses.component';
 import { HomeComponent } from '../home/home.component';
 import { InquiryComponent } from '../inquiry/inquiry.component';
-import { AboutusComponent } from '../aboutus/aboutus.component';
 import { StudiesComponent } from '../studies/studies.component';
-import { CourseComponent } from '../courses/course/course.component';
+import { AdminChatComponent } from '../chat/admin-chat/admin-chat.component';
+import { SigninComponent } from '../signin/signin.component';
 
 const appRoutes: Routes = [
   {
@@ -88,6 +90,16 @@ const appRoutes: Routes = [
     path: 'semester',
     component: CourseComponent,
     data: { title: "CitiMax Enterprises" }
+  },
+  {
+    path: 'admin',
+    component: AdminChatComponent,
+    data: { title: "CitiMax Admin" }
+  },
+  {
+    path: 'signin',
+    component: SigninComponent,
+    data: { title: "SignIn Admin" }
   },
 ]
 
