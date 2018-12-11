@@ -12,12 +12,32 @@ import { v1 as uuid } from "uuid";
 export class DialogflowService{
   chatInit = false;
   collection = "Chats";
-  sessionId: string = uuid();
+  sessionId: string = this.localSessionId();
   items: Observable<{}>;
 
   constructor(private http: Http, private db: AngularFirestore) {
     this.items = this.db.collection(this.collection).doc(this.sessionId).valueChanges();
   };
+
+  private localSessionId() {
+    if (!window.sessionStorage.sessionId) {
+      const uniqueId = uuid();
+      try {
+        window.sessionStorage.setItem('sessionId',uniqueId)
+      }catch (e) {
+        console.error(e)
+      }
+      return uniqueId;
+    } else {
+      return window.sessionStorage.sessionId
+    } 
+  }
+
+  public setSessionId(session) {
+    this.chatInit = true;
+    this.sessionId = session;
+    this.items = this.db.collection(this.collection).doc(session).valueChanges();
+  }
 
   public msgToDb(msgObj) {
     msgObj.timeStamp = Date.now();
@@ -43,5 +63,16 @@ export class DialogflowService{
           return res["_body"];
         })
       );
+  };
+
+  public getAllChatSessions =  this.db.collection(this.collection).snapshotChanges();
+  public getChatSession(session) {
+    return this.db.collection(this.collection).doc(session).snapshotChanges();
+  };
+
+  public deleteSession(sessionId) {
+    this.db.collection(this.collection).doc(sessionId).delete().then(() => {
+        console.log(`Document ${sessionId} successfully deleted!`);
+      })
   }
 }

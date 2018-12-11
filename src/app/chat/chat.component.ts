@@ -4,50 +4,74 @@ import {
   ElementRef,
   ViewChild,
   AfterViewChecked,
-  HostListener
-} from "@angular/core";
-import { NgForm } from "@angular/forms";
-import { DialogflowService } from "./dialogflow.service";
+  HostListener,
+  Input,
+  OnChanges
+} from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { DialogflowService } from './dialogflow.service';
 
 @Component({
-  selector: "app-chat",
-  templateUrl: "./chat.component.html",
-  styleUrls: ["./chat.component.css"]
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit, AfterViewChecked {
-  @ViewChild("scrollMe")
+export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
+  @ViewChild('scrollMe')
   private myScrollContainer: ElementRef;
   constructor(private dialogflowService: DialogflowService) {}
   @HostListener('window:beforeunload', ['$event'])
   beforeunloadHandler(event) {
-    this.endChat();
+    // this.endChat();
   }
-  inputMsg: string = "";
+  @Input()
+  chatDbMessages: any;
+
+  inputMsg: string = '';
   chatMessages = [];
+  subscription;
 
   ngOnInit() {
-    this.dialogflowService.items.subscribe(data => {
-      if(data){
-        this.chatMessages = data['chat'];
-      }
-    })
+    this.subscribeToChat();
   }
+
+  ngOnChanges() {
+    this.subscribeToChat();
+  }
+
   ngAfterViewChecked() {}
 
-  endChat(){
-    this.dialogflowService.msgToDb({ msg: "User left the chat session", msgFrom: "user" })
+  endChat() {
+    this.dialogflowService.msgToDb({
+      msg: 'User left the chat session',
+      msgFrom: 'user'
+    });
   }
 
   scrollToBottom() {
     this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
   }
 
+  subscribeToChat() {
+    this.subscription = this.dialogflowService.items.subscribe(data => {
+      if (data) {
+        this.chatMessages = data['chat'];
+      }
+    });
+  }
+
   onSubmit(form: NgForm) {
+    let user = 'user';
+    if (this.chatDbMessages) {
+      user = 'bot';
+    }
     if (form.valid) {
-      this.dialogflowService.msgToDb({ msg: form.value.msg, msgFrom: "user" })
-      this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
-        this.dialogflowService.msgToDb({ msg: res, msgFrom: "bot" })
-      });
+      this.dialogflowService.msgToDb({ msg: form.value.msg, msgFrom: user });
+      if (!this.chatDbMessages) {
+        this.dialogflowService.getResponse(form.value.msg).subscribe(res => {
+          this.dialogflowService.msgToDb({ msg: res, msgFrom: 'bot' });
+        });
+      }
       form.resetForm();
     }
   }

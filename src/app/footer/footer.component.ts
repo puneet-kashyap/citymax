@@ -25,6 +25,7 @@ export class FooterComponent implements OnInit {
   loginState() {
     if (this.signInState === 'Sign Out') {
       this.firebaseService.auth.signOut().then(() => {
+        window.sessionStorage.removeItem('sessionId');
         console.log('User Signed Out');
       });
     }
