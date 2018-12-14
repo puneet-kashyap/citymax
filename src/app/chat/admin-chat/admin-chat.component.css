@@ -1,0 +1,41 @@
+.container {
+  text-align: center;
+  max-width: 1500px !important;
+}
+
+.chats {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sessions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  max-width: 30%;
+}
+
+.session {
+  padding: 5px;
+  margin: 2px;
+  height: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chat {
+  width: 100%;
+}
+
+span {
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+  .chats {
+    flex-direction: column;
+  }
+  .sessions {
+    max-width: 100%;
+  }
+}

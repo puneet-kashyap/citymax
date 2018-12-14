@@ -1,0 +1,18 @@
+<section class="container admin" *ngIf="display">
+    <header>
+        <h1>Admin Chat</h1>
+    </header>
+
+    <div class="chats">
+        <div class="sessions">
+            <div class='session' *ngFor='let session of chatSessions; let i = index' (click)="getChatSession(session)">
+                <span>{{session | slice:0:5}}</span>
+                <mat-icon matBadge="X" *ngIf="showBadge(i)" (click)="onDeleteSession(session)" matBadgeColor="warn"></mat-icon>
+            </div>
+        </div>
+        <div class="chat">
+            <app-chat [chatDbMessages]='chatDbMessages'></app-chat>
+        </div>
+    </div>
+
+</section>
