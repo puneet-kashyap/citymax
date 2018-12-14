@@ -7,18 +7,18 @@ import { DialogflowService } from '../dialogflow.service';
   styleUrls: ['./admin-chat.component.css']
 })
 export class AdminChatComponent implements OnInit {
-  constructor(
-    private dialogflowService: DialogflowService,
-  ) {}
+  constructor(private dialogflowService: DialogflowService) {}
   private chatSessions = [];
   chatDbMessages = [];
   display = true;
   chatSessionSet = new Set();
+  selectedSession: number;
 
   updateChat(chatArray) {
     this.chatDbMessages = [];
-    this.chatDbMessages.push(chatArray.chat);
-    console.log(this.chatDbMessages);
+    if (chatArray) {
+      this.chatDbMessages.push(chatArray.chat);
+    }
   }
 
   ngOnInit() {
@@ -32,7 +32,17 @@ export class AdminChatComponent implements OnInit {
     });
   }
 
+  onDeleteSession(session) {
+    this.chatSessions.splice(this.selectedSession, 1);
+    this.dialogflowService.deleteSession(session);
+  }
+
+  showBadge(index) {
+    return this.selectedSession === index ? true : false;
+  }
+
   getChatSession(session) {
+    this.selectedSession = this.chatSessions.indexOf(session);
     this.dialogflowService.setSessionId(session);
     this.dialogflowService.getChatSession(session).subscribe(data => {
       this.updateChat(data.payload.data());

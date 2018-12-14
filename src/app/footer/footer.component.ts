@@ -8,15 +8,18 @@ import { FirebaseService } from '../firebase.service';
 })
 export class FooterComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) {}
-  ngOnInit() {
-    this.firebaseService.auth.onAuthStateChanged(user => {
-      this.signInState = user ? 'Sign Out' : 'Sign In';
-    });
-  }
 
   app: string = 'CitiMax Enterprises';
   email: string = 'info@citimaxenterprises.com';
   signInState: string;
+  showAdmin: boolean;
+
+  ngOnInit() {
+    this.firebaseService.auth.onAuthStateChanged(user => {
+      this.signInState = user ? 'Sign Out' : 'Sign In';
+      this.showAdmin = user ? true : false;
+    });
+  }
 
   getYear() {
     return new Date().getFullYear();

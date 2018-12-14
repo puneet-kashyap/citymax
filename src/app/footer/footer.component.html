@@ -5,6 +5,7 @@
         <a routerLink={{link.hyperlink}} routerLinkActive="active">{{link.name}}</a> |
       </div>
       <a class="signin" routerLink='/signin' (click)='loginState()' routerLinkActive="active">{{signInState}}</a>
+      <a *ngIf='showAdmin' class="signin" href='/admin' routerLinkActive="active">Admin</a>
     </div>
   </div>
   <div class="row copyright">
