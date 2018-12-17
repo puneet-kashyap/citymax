@@ -9,6 +9,14 @@ declare var require: any;
 export class HeaderComponent implements OnInit {
   constructor() {}
 
+  rightLogo = require('../../assets/images/globeBooks.png');
+  routes = [
+    { routeLink: '/', routeName: 'Home' },
+    { routeLink: '/courses', routeName: 'Courses' },
+    { routeLink: '/inquiry', routeName: 'Inquiry' },
+    { routeLink: '/contact', routeName: 'Contact Us' }
+  ];
+
   ngOnInit() {
     window.onscroll = this.shrink;
   }
@@ -23,13 +31,4 @@ export class HeaderComponent implements OnInit {
       document.getElementById('first-row').classList.add('expand');
     }
   }
-
-  rightLogo = require('../../assets/images/globeBooks.png');
-
-  routes = [
-    { routeLink: '/', routeName: 'Home' },
-    { routeLink: '/courses', routeName: 'Courses' },
-    { routeLink: '/inquiry', routeName: 'Inquiry' },
-    { routeLink: '/contact', routeName: 'Contact Us' }
-  ];
 }

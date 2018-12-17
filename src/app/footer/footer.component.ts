@@ -9,10 +9,25 @@ import { FirebaseService } from '../firebase.service';
 export class FooterComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) {}
 
-  app: string = 'CitiMax Enterprises';
-  email: string = 'info@citimaxenterprises.com';
+  app = 'CitiMax Enterprises';
+  email = 'info@citimaxenterprises.com';
   signInState: string;
   showAdmin: boolean;
+  links = [
+    { name: 'Home', hyperlink: '/' },
+    { name: 'Inquiry', hyperlink: '/inquiry' },
+    { name: 'Courses', hyperlink: '/courses' },
+    { name: 'Contact Us', hyperlink: '/contact' },
+    { name: 'About Us', hyperlink: '/aboutus' },
+    { name: 'Vocational Courses', hyperlink: '/vocational' },
+    { name: 'Internship In Overseas', hyperlink: '/internship' },
+    { name: 'Junior And High School Programmes', hyperlink: '/juniorandhigh' },
+    { name: 'Language Programmes', hyperlink: '/language' },
+    { name: 'Summer Camps', hyperlink: '/summercamp' },
+    { name: 'Semester Abroad', hyperlink: '/semester' },
+    { name: 'Spending A Year Abroad', hyperlink: '/spendingyear' },
+    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate'}
+  ];
 
   ngOnInit() {
     this.firebaseService.auth.onAuthStateChanged(user => {
@@ -34,19 +49,5 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  links = [
-    { name: 'Home', hyperlink: '/' },
-    { name: 'Inquiry', hyperlink: '/inquiry' },
-    { name: 'Courses', hyperlink: '/courses' },
-    { name: 'Contact Us', hyperlink: '/contact' },
-    { name: 'About Us', hyperlink: '/aboutus' },
-    { name: 'Vocational Courses', hyperlink: '/vocational' },
-    { name: 'Internship In Overseas', hyperlink: '/internship' },
-    { name: 'Junior And High School Programmes', hyperlink: '/juniorandhigh' },
-    { name: 'Language Programmes', hyperlink: '/language' },
-    { name: 'Summer Camps', hyperlink: '/summercamp' },
-    { name: 'Semester Abroad', hyperlink: '/semester' },
-    { name: 'Spending A Year Abroad', hyperlink: '/spendingyear' },
-    { name: 'Undergraduate & Post Graduate Courses', hyperlink: '/undergraduate'}
-  ];
+
 }

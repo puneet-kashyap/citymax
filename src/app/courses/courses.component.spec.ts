@@ -40,14 +40,14 @@ describe('CoursesComponent', () => {
   });
 
   it('courses names should be displayed', () => {
-    let result = fixture.debugElement.queryAll(By.css('mat-card-header.card>h3'));
+    const result = fixture.debugElement.queryAll(By.css('mat-card-header.card>h3'));
     result.forEach((x, i) => {
       expect(x.nativeElement.textContent).toEqual(component.courses[i].name);
     });
   });
 
   it('images for course should be displayed', () => {
-    let result = fixture.debugElement.queryAll(By.css('img'));
+    const result = fixture.debugElement.queryAll(By.css('img'));
     result.forEach((x, i) => {
       expect(x.nativeElement.src).toContain(component.courses[i].img);
       expect(x.nativeElement.alt).toEqual(component.courses[i].name);
@@ -55,14 +55,14 @@ describe('CoursesComponent', () => {
   });
 
   it('descriptions for course should be displayed', () => {
-    let result = fixture.debugElement.queryAll(By.css('mat-card-content>p'));
+    const result = fixture.debugElement.queryAll(By.css('mat-card-content>p'));
     result.forEach((desc, i) => {
       expect(desc.nativeElement.textContent).toEqual(component.courses[i].description);
     });
   });
 
   it('deatils button for course should be displayed', async(() => {
-    let result = fixture.debugElement.queryAll(By.css('mat-card-actions>button'));
+    const result = fixture.debugElement.queryAll(By.css('mat-card-actions>button'));
     result.forEach((x, i) => {
       expect(x.nativeElement.getAttribute('ng-reflect-router-link')).toEqual('/' + component.courses[i].id);
     });

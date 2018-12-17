@@ -39,5 +39,5 @@ describe('CourseComponent', () => {
   it('should get Course name', fakeAsync(() => {
     spyOn(component, 'getCourseName').and.returnValue('undergraduate');
     expect(component.getCourseName()).toEqual('undergraduate');
-  }))
+  }));
 });
