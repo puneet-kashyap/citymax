@@ -60,7 +60,7 @@ export class DialogflowService {
       .get(
         `https://us-central1-citymax-faacf.cloudfunctions.net/api/chat?msg=${msg}&session=${this.sessionId}`,
         {responseType: 'text'}
-      )
+      );
   }
 
   public getChatSession(session) {

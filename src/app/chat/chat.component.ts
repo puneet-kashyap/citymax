@@ -3,26 +3,27 @@ import {
   OnInit,
   ElementRef,
   ViewChild,
-  AfterViewChecked,
   HostListener,
   Input,
-  OnChanges
+  OnChanges,
+  OnDestroy
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DialogflowService } from './dialogflow.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
+export class ChatComponent implements OnInit, OnChanges, OnDestroy {
   constructor(private dialogflowService: DialogflowService) {}
   @ViewChild('scrollMe')
   private myScrollContainer: ElementRef;
   inputMsg = '';
   chatMessages = [];
-  subscription;
+  subscription: Subscription;
   @HostListener('window:beforeunload', ['$event'])
   @Input()
   chatDbMessages: any;
@@ -31,14 +32,16 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
   }
 
   ngOnInit() {
-    this.subscribeToChat();
+      this.subscribeToChat();
   }
 
   ngOnChanges() {
     this.subscribeToChat();
   }
 
-  ngAfterViewChecked() {}
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   endChat() {
     this.dialogflowService.msgToDb({
