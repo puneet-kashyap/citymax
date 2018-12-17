@@ -23,12 +23,12 @@ export class FirebaseService {
 
   setFirebaseUser = user => {
     this.user = user;
-  };
+  }
 
   getFirebaseUser = () => {
     console.log(firebase.auth().currentUser ? firebase.auth().currentUser.displayName : 'Guest');
     return firebase.auth().currentUser;
-  };
+  }
 
   writeToDatabase(collection, dataObj) {
     this.db
@@ -44,10 +44,10 @@ export class FirebaseService {
 
   fireUI = () => {
     const that = this;
-    var uiConfig = {
+    const uiConfig = {
       callbacks: {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-          that.setFirebaseUser(authResult.user.displayName)
+          that.setFirebaseUser(authResult.user.displayName);
           firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
           return true;
         }
@@ -80,5 +80,5 @@ export class FirebaseService {
       const ui = new firebaseui.auth.AuthUI(firebase.auth());
       ui.start('#firebaseui-auth-container', uiConfig);
     }
-  };
+  }
 }

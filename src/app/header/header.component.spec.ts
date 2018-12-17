@@ -42,8 +42,8 @@ describe('HeaderComponent', () => {
 
   it('should display all the links on the header', () => {
     const compiled = fixture.debugElement.nativeElement;
-    let result = fixture.debugElement.queryAll(By.css('div.second-row>a'));
-    result.forEach(((x,i) => {
+    const result = fixture.debugElement.queryAll(By.css('div.second-row>a'));
+    result.forEach(((x, i) => {
       expect(x.nativeElement.getAttribute('ng-reflect-router-link')).toEqual(component.routes[i].routeLink);
       expect(x.nativeElement.textContent.trim()).toEqual(component.routes[i].routeName);
     }));

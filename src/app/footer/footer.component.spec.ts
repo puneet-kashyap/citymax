@@ -34,7 +34,7 @@ describe('FooterComponent', () => {
   });
 
   it('should display all the links', () => {
-    let result = fixture.debugElement.queryAll(By.css('div.links>a'));
+    const result = fixture.debugElement.queryAll(By.css('div.links>a'));
     result.forEach((x, i) => {
       expect(x.nativeElement.textContent).toEqual(component.links[i].name);
       expect(x.nativeElement.getAttribute('ng-reflect-router-link')).toEqual(component.links[i].hyperlink);
@@ -47,5 +47,5 @@ describe('FooterComponent', () => {
     expect(compiled.querySelector('div.copyright').textContent).toContain(component.getYear());
     expect(compiled.querySelector('#footer-email').textContent).toContain(component.app);
     expect(compiled.querySelector('#footer-email').href).toContain(component.email);
-  })
+  });
 });

@@ -17,19 +17,17 @@ import { DialogflowService } from './dialogflow.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
-  @ViewChild('scrollMe')
-  private myScrollContainer: ElementRef;
   constructor(private dialogflowService: DialogflowService) {}
+  private myScrollContainer: ElementRef;
+  inputMsg = '';
+  chatMessages = [];
+  subscription;
   @HostListener('window:beforeunload', ['$event'])
+  @Input()
+  chatDbMessages: any;
   beforeunloadHandler(event) {
     // this.endChat();
   }
-  @Input()
-  chatDbMessages: any;
-
-  inputMsg: string = '';
-  chatMessages = [];
-  subscription;
 
   ngOnInit() {
     this.subscribeToChat();

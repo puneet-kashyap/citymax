@@ -9,8 +9,6 @@ declare var require: any;
 export class CarouselComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
-
   images = [
     require('../../../assets/images/carousel/hampton-court-palace-london-uk-header-min.jpg'),
     require('../../../assets/images/carousel/sydney-harbour-bridge-header-min.jpg'),
@@ -20,4 +18,6 @@ export class CarouselComponent implements OnInit {
     require('../../../assets/images/carousel/grand-triumphal-colosseum-rome-italy-header-min.jpg'),
     require('../../../assets/images/carousel/cities-travel-world-header-2911-min.jpg')
   ];
+
+  ngOnInit() {}
 }

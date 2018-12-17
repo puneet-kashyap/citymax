@@ -1,11 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { MatAutocompleteModule, MatCard, MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import {
+  MatAutocompleteModule,
+  MatCard,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatNativeDateModule
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 
 import { InquiryComponent } from './inquiry.component';
-
 
 describe('InquiryComponent', () => {
   let component: InquiryComponent;
@@ -13,10 +19,7 @@ describe('InquiryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        InquiryComponent,
-        MatCard,
-      ],
+      declarations: [InquiryComponent, MatCard],
       imports: [
         FormsModule,
         MatAutocompleteModule,
@@ -26,8 +29,7 @@ describe('InquiryComponent', () => {
         MatInputModule,
         BrowserAnimationsModule
       ]
-    })
-      .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -42,7 +44,9 @@ describe('InquiryComponent', () => {
 
   it('should display inquiry header', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div.reservation>mat-card>div>h3').textContent).toEqual('Inquiry');
+    expect(
+      compiled.querySelector('div.reservation>mat-card>div>h3').textContent
+    ).toEqual('Inquiry');
   });
 
   it('should display input field for name', () => {
@@ -92,5 +96,4 @@ describe('InquiryComponent', () => {
     const button = compiled.querySelector('button[type=submit]');
     expect(button.textContent.trim()).toEqual('Submit');
   });
-
 });
