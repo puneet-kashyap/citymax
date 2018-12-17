@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { v1 as uuid } from 'uuid';
 
 @Injectable({
@@ -59,13 +58,9 @@ export class DialogflowService {
   public getResponse(msg) {
     return this.http
       .get(
-        `https://us-central1-citymax-faacf.cloudfunctions.net/api/chat?msg=${msg}&session=${this.sessionId}`
+        `https://us-central1-citymax-faacf.cloudfunctions.net/api/chat?msg=${msg}&session=${this.sessionId}`,
+        {responseType: 'text'}
       )
-      .pipe(
-        map(res => {
-          return res['_body'];
-        })
-      );
   }
 
   public getChatSession(session) {

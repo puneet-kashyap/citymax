@@ -17,7 +17,6 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-//  import { HttpModule } from '@angular/http';
  import { HttpClientModule } from '@angular/common/http';
 import { RoutesModule } from './routes/routes.module';
 import { environment } from '../environments/environment';
@@ -57,7 +56,6 @@ import { SigninComponent } from './signin/signin.component';
   ],
   imports: [
     BrowserModule,
-    // HttpModule,
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,

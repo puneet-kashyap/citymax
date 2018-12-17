@@ -18,6 +18,7 @@ import { DialogflowService } from './dialogflow.service';
 })
 export class ChatComponent implements OnInit, AfterViewChecked, OnChanges {
   constructor(private dialogflowService: DialogflowService) {}
+  @ViewChild('scrollMe')
   private myScrollContainer: ElementRef;
   inputMsg = '';
   chatMessages = [];
