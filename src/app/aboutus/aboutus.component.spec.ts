@@ -3,8 +3,8 @@ import { By } from '@angular/platform-browser';
 import { AboutusComponent } from './aboutus.component';
 
 describe('AboutusComponent', () => {
-  const component: AboutusComponent;
-  const fixture: ComponentFixture<AboutusComponent>;
+  let component: AboutusComponent;
+  let fixture: ComponentFixture<AboutusComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

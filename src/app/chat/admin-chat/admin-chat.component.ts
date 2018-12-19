@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogflowService } from '../dialogflow.service';
+import { FirebaseService } from '../../firebase.service';
 
 @Component({
   selector: 'app-admin-chat',
@@ -7,19 +8,15 @@ import { DialogflowService } from '../dialogflow.service';
   styleUrls: ['./admin-chat.component.css']
 })
 export class AdminChatComponent implements OnInit {
-  constructor(private dialogflowService: DialogflowService) {}
+  constructor(
+    private dialogflowService: DialogflowService,
+    private firebaseService: FirebaseService
+  ) {}
   private chatSessions = [];
   chatDbMessages = [];
   display = true;
   chatSessionSet = new Set();
   selectedSession: number;
-
-  updateChat(chatArray) {
-    this.chatDbMessages = [];
-    if (chatArray) {
-      this.chatDbMessages.push(chatArray.chat);
-    }
-  }
 
   ngOnInit() {
     this.dialogflowService.getAllChatSessions.subscribe(data => {
@@ -30,6 +27,17 @@ export class AdminChatComponent implements OnInit {
         this.chatSessions = Array.from(this.chatSessionSet);
       }
     });
+  }
+
+  updateChat(chatArray) {
+    this.chatDbMessages = [];
+    if (chatArray) {
+      this.chatDbMessages.push(chatArray.chat);
+    }
+  }
+
+  showNotificationButton() {
+    return this.firebaseService.getMsgToken ? true : true;
   }
 
   onDeleteSession(session) {
@@ -47,5 +55,9 @@ export class AdminChatComponent implements OnInit {
     this.dialogflowService.getChatSession(session).subscribe(data => {
       this.updateChat(data.payload.data());
     });
+  }
+
+  enableNotification() {
+    this.firebaseService.requestNotificationPermission();
   }
 }

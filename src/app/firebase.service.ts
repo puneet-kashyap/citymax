@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 // import * as firebase from 'firebase';
 import { environment } from '../environments/environment';
 import * as firebaseui from 'firebaseui';
+
 declare var require: any;
 
 const firebase = require('firebase/app');
@@ -10,16 +11,21 @@ const firebase = require('firebase/app');
   providedIn: 'root'
 })
 export class FirebaseService {
-  constructor() {
-    firebase.firestore().settings({ timestampsInSnapshots: true });
-  }
+
   app = !firebase.apps.length
     ? firebase.initializeApp(environment.firebase)
     : firebase.app();
   db = firebase.firestore();
   auth = firebase.auth();
+  messaging = firebase.messaging();
 
   private user;
+
+  constructor() {
+    firebase.firestore().settings({ timestampsInSnapshots: true });
+    this.messaging.usePublicVapidKey(environment.vapidKey);
+    this.recieveMessages()
+  }
 
   setFirebaseUser = user => {
     this.user = user;
@@ -30,7 +36,40 @@ export class FirebaseService {
     return firebase.auth().currentUser;
   }
 
-  writeToDatabase(collection, dataObj) {
+  requestNotificationPermission = () => {
+    const that = this
+    this.messaging.requestPermission().then(function() {
+      console.log('Notification permission granted.');
+      that.getMsgToken()
+    }).catch(function(err) {
+      console.log('Unable to get permission to notify.', err);
+    });
+  }
+
+  recieveMessages() {
+    this.messaging.onMessage(function (payload) {
+      console.log('onMessage: ', payload);
+    });
+  }
+
+  getMsgToken = () => {
+    const that = this
+    this.messaging.getToken().then(function (currentToken) {
+      if (currentToken) {
+        console.log(currentToken)
+        that.writeToDatabase('Tokens', {token : currentToken})
+        return currentToken;
+      } else {
+        console.log('No Instance ID token available. Request permission to generate one.');
+      }
+    })
+      .catch(function (err) {
+        console.log('An error occurred while retrieving token. ', err);
+      });
+  };
+
+
+  writeToDatabase(collection:string, dataObj:{}) {
     this.db
       .collection(collection)
       .add(dataObj)

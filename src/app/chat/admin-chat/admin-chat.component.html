@@ -2,6 +2,9 @@
     <header>
         <h1>Admin Chat</h1>
     </header>
+    <div *ngIf='showNotificationButton()'>
+        <button (click)='enableNotification()'>Enable Notification</button>
+    </div>
 
     <div class="chats">
         <div class="sessions">
