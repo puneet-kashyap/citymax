@@ -47,7 +47,6 @@ export class FirebaseService {
   }
 
   recieveMessages() {
-    console.log('recieving')
     this.messaging.onMessage(function (payload) {
       console.log('onMessage: ', payload);
     });
