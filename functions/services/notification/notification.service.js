@@ -1,16 +1,20 @@
 const admin = require('firebase-admin');
 
 const sendChatNotification = token => {
-  const registrationToken = token
+  const registrationToken = token;
   const message = {
     token: registrationToken,
-    notification: {
-      title: 'New Chat initialized',
-      body: 'Some body wants to chat with you on website'
+    webpush: {
+      notification: {
+        title: 'CitiMax new chat user',
+        body: 'Some body wants to chat on CitiMax website',
+        icon: 'https://citimaxenterprises.com/favicon.ico',
+        click_action: 'https://citimaxenterprises.com/admin'
+      }
     }
   };
 
-  admin.messaging().send((message))
+  admin.messaging().send(message)
     .then(response => {
       console.log('Successfully sent message:', response);
     })
