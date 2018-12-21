@@ -37,7 +37,10 @@ export class AdminChatComponent implements OnInit {
   }
 
   showNotificationButton() {
-    return this.firebaseService.notificationBrowser;
+    return (
+      this.firebaseService.notificationBrowser &&
+      !this.firebaseService.hasNotificationToken
+    );
   }
 
   onDeleteSession(session) {

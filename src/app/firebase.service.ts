@@ -19,6 +19,7 @@ export class FirebaseService {
   auth = firebase.auth();
   messaging;
   notificationBrowser: boolean = false ;
+  hasNotificationToken: boolean = false;
 
   private user;
 
@@ -32,6 +33,7 @@ export class FirebaseService {
       this.notificationBrowser = true;
       this.messaging = firebase.messaging();
       this.messaging.usePublicVapidKey(environment.vapidKey);
+      this.hasToken();
       this.recieveMessages();
     } else {
       console.log('Cloud Messaging enabled : ', firebase.messaging.isSupported());
@@ -63,16 +65,20 @@ export class FirebaseService {
     });
   }
 
+  hasToken = () => {
+    this.messaging.getToken().then((token) => {
+      this.hasNotificationToken = token ? true : false;
+    })
+  }
+
   getMsgToken = () => {
     const that = this;
     this.messaging.getToken().then(function (currentToken) {
       if (currentToken) {
         console.log(currentToken);
         that.writeToDatabase('Tokens', {token : currentToken});
-        return currentToken;
       } else {
         console.log('No Instance ID token available. Request permission to generate one.');
-        return false;
       }
     })
       .catch(function (err) {

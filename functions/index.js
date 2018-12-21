@@ -33,8 +33,8 @@ exports.sendInquiryInfo = functions.firestore
       admin.firestore().collection('Tokens').get()
         .then((snapshot) => {
           snapshot.forEach((doc) => {
-            notificationService.sendChatNotification(doc.data().token)
             console.log('Token', doc.data().token)
+            notificationService.sendChatNotification(doc.data().token)
             return doc.data().token
           })
         })
